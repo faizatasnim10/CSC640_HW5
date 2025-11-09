@@ -358,3 +358,179 @@ UML is a standardized visual language used to model software systems.
 ✅ **Python** – Simple, powerful programming language  
 ✅ **OOP** – Organize code into reusable classes  
 ✅ **UML** – Visual modeling tool for system design  
+
+---
+# Week-4
+# Software Design and OOP Concepts
+
+---
+
+## 1. Object-Oriented Programming (OOP) for Software Design
+
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects. The key principles of OOP—Abstraction, Encapsulation, Inheritance, Polymorphism, and Composition—help structure complex systems effectively and align software design with real-world problems.
+
+---
+
+## 2. Requirements
+
+Software requirements specify what the system should do. They include:
+
+- **Functional Requirements:** Specific behavior or functions of the system (e.g., login, data processing).
+- **Non-Functional Requirements:** Constraints or quality attributes (e.g., performance, security, scalability).
+- **User Stories / Use Cases:** Requirements in the "Actor-Goal" format to capture how users interact with the system.
+
+
+---
+
+## 3. Abstraction and Inheritance
+
+**Abstraction:**  
+- Hides internal implementation details and exposes only necessary interfaces.  
+- Helps reduce complexity and focus on essential features.  
+
+**Example:**  
+```python
+class Vehicle:
+    def start(self):
+        pass  # Abstract method
+```
+
+---
+
+**Inheritance:**  
+- Allows a class (subclass) to inherit attributes and methods from another class (superclass).  
+- Promotes code reuse and hierarchical relationships.
+
+**Example:**  
+```python
+class Car(Vehicle):
+    def start(self):
+        print("Car engine started")
+```
+
+---
+
+## 4. Encapsulation and Dependency Injection
+
+**Encapsulation:**  
+- Restricts direct access to object data and exposes functionality via methods.  
+- Enhances security, maintainability, and reduces errors.
+
+**Example:**  
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self._balance = balance  # Protected attribute
+    
+    def get_balance(self):
+        return self._balance
+```
+---
+
+**Dependency Injection:**  
+- Technique where dependencies are provided to a class rather than created inside it.  
+- Reduces tight coupling and improves testability.
+
+**Example:**  
+```python
+class Service:
+    def __init__(self, repository):
+        self.repository = repository  # Injected dependency
+```
+
+---
+
+## 5. Polymorphism and Composition
+
+**Polymorphism:**  
+- Allows objects of different classes to be treated as objects of a common superclass.  
+- Supports method overriding and dynamic behavior.
+
+---
+
+**Example:**  
+```python
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+class Cat:
+    def speak(self):
+        return "Meow!"
+
+animals = [Dog(), Cat()]
+for animal in animals:
+    print(animal.speak())
+```
+---
+
+**Composition:**  
+- Models "has-a" relationships where objects contain other objects.  
+- Promotes flexible design over inheritance when appropriate.
+
+**Example:**  
+```python
+class Engine:
+    pass
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()  # Composition
+```
+
+---
+
+## 6. Software Requirements
+
+- Define what system must do and its constraints.
+- Serve as a guide for design, implementation, and testing.
+- Can be documented as **user stories**, **use case diagrams**, or **requirement specifications**.
+
+---
+
+## 7. Software Testing
+
+Software testing ensures that the system behaves as expected. Key points:
+
+- **Unit Testing:** Tests individual functions or modules.
+- **Integration Testing:** Ensures modules work together correctly.
+- **System Testing:** Validates the entire system’s functionality.
+- **Regression Testing:** Ensures new changes do not break existing functionality.
+- **Importance:** Catch bugs early, provide confidence in refactoring, and improve software reliability.
+
+---
+
+## 8. SOLID Principles
+
+**S** - **Single Responsibility Principle (SRP):**  
+- A class should have only one reason to change.  
+- Improves maintainability and reduces complexity.
+
+**O** - **Open/Closed Principle (OCP):**  
+- Classes should be open for extension but closed for modification.  
+- Enables adding new functionality without changing existing code.
+
+**L** - **Liskov Substitution Principle (LSP):**  
+- Subclasses must be substitutable for their base class.  
+- Ensures consistent behavior and reduces bugs when using polymorphism.
+
+---
+
+**I** - **Interface Segregation Principle (ISP):**  
+- Clients should not be forced to depend on methods they do not use.  
+- Promotes focused, smaller interfaces.
+
+**D** - **Dependency Inversion Principle (DIP):**  
+- High-level modules should not depend on low-level modules; both should depend on abstractions.  
+- Reduces tight coupling and increases flexibility.
+
+---
+
+## 9. Conclusion
+
+OOP combined with proper requirements and testing ensures robust software design.  
+- **Abstraction & Inheritance:** Simplify and reuse code.  
+- **Encapsulation & DI:** Protect data and improve testability.  
+- **Polymorphism & Composition:** Enable flexible and dynamic behavior.  
+- **SOLID Principles:** Promote maintainable, scalable, and high-quality code.  
+- **Testing:** Validates that design and implementation meet the requirements.

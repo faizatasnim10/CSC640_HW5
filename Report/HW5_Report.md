@@ -129,7 +129,7 @@ My project Student Management System integrates **PHP** with **11 RESTful APIs**
 ---
 
 Here is a example of working api which is deployed by NGINX:
-![width:500px center](./api.png)
+![width:700px center](./api.png)
 
 ---
 
@@ -332,7 +332,7 @@ Laravel supports multiple databases like MySQL, PostgreSQL, and SQLite.
 
 Example of Database in laravel
 
-![width:800px center](./database.png)
+![center](./database.png)
 
 ---
 
@@ -427,4 +427,91 @@ On the other hand, behavioral diagrams, including Use Case, Sequence, and Activi
 - **Class Name:** Student  
 - **Attributes:** name, email  
 - **Methods:** enroll(), attend_class()
+
+---
+
+# Software Design and Development Concepts: Week-4
+
+---
+
+## 1. Object-Oriented Programming (OOP) for Software Design
+
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and methods. OOP helps in organizing software design around **data and behavior**, rather than just functions and logic. It encourages modularity, code reuse, and scalability, making it ideal for complex software projects. Key principles of OOP include **Abstraction, Encapsulation, Inheritance, Polymorphism**, and **Composition**.
+
+---
+
+## 2. Requirements in Software Development
+
+Requirements define **what a system should do** and the constraints under which it must operate. They serve as a blueprint for software design, implementation, and testing.  
+- **Functional requirements** describe system behavior or functionalities.  
+- **Non-functional requirements** describe system qualities like performance, usability, and security.  
+
+
+---
+
+## 3. Abstraction and Inheritance
+
+- **Abstraction**: Abstraction is the process of exposing only the necessary details of an object while hiding the internal complexity. It allows developers to focus on **what an object does** rather than **how it does it**.  
+  *Example*: A `Vehicle` class may have methods like `start()` and `stop()`, without exposing the internal engine mechanics.
+
+- **Inheritance**: Inheritance allows a class to **derive properties and behaviors from another class**, promoting code reuse and hierarchy.  
+  *Example*: A `Car` class can inherit from the `Vehicle` class and reuse its methods while adding car-specific features like `airConditioning()`.
+
+---
+
+## 4. Encapsulation and Dependency Injection
+
+- **Encapsulation**: Encapsulation is the practice of **restricting direct access to an object's data** and exposing it only through controlled methods. It protects the internal state and prevents unintended interference.  
+  *Example*: Using private variables `_balance` and public getter/setter methods in a `BankAccount` class.
+
+- **Dependency Injection (DI)**: DI is a design pattern where a class receives its dependencies from an external source rather than creating them internally. This reduces **tight coupling** and enhances testability.  
+  *Example*: Passing a `DatabaseService` object to a `UserService` constructor instead of instantiating it inside the class.
+
+---
+
+## 5. Polymorphism and Composition
+
+- **Polymorphism**: Polymorphism allows objects of different classes to respond to the same method call in a class-specific way. It enables **flexible and extensible code**.  
+  *Example*: `Dog` and `Cat` classes both implement `makeSound()`. Calling `makeSound()` on a `Dog` object outputs "Woof", while on a `Cat` object outputs "Meow".
+
+- **Composition**: Composition is a design principle where a class is composed of one or more objects of other classes to achieve complex behavior. It is often preferred over inheritance for flexibility.  
+  *Example*: A `Car` object contains `Engine`, `Wheel`, and `Seat` objects instead of inheriting from them.
+
+---
+
+## 6. Software Testing
+
+Software testing ensures that the system behaves as expected. It includes:
+
+- **Unit Testing**: Testing individual components for correctness.
+- **Integration Testing**: Ensuring that combined modules interact correctly.
+- **System Testing**: Testing the complete system in an environment simulating production.
+- **Acceptance Testing**: Validating the system against user requirements.
+
+
+
+---
+
+## 7. SOLID Principles
+
+SOLID is a set of principles to write **maintainable and scalable object-oriented software**.
+
+- **S - Single Responsibility Principle (SRP)**: A class should have **only one reason to change**, meaning it should have a single responsibility.
+- **O - Open/Closed Principle (OCP)**: Software entities should be **open for extension but closed for modification**, allowing behavior to be extended without altering existing code.
+- **L - Liskov Substitution Principle (LSP)**: Subclasses must be **substitutable for their base classes** without breaking functionality.
+
+---
+
+- **I - Interface Segregation Principle (ISP)**: Many specific interfaces are better than a single general-purpose interface.
+- **D - Dependency Inversion Principle (DIP)**: High-level modules should not depend on low-level modules; both should depend on abstractions.
+
+**Example:**
+- **SO** (Single Responsibility + Open/Closed) ensures that each class is focused on one task but can be extended without modification.  
+- **LID** (Liskov + Interface Segregation + Dependency Inversion) encourages safe inheritance, minimal interface exposure, and decoupled design.
+
+---
+
+### Conclusion
+
+This report covers key software engineering concepts including OOP design, requirements analysis, fundamental OOP principles (Abstraction, Inheritance, Encapsulation, Polymorphism, Composition), software testing, and SOLID principles. Applying these practices leads to modular, maintainable, and scalable software solutions.
 

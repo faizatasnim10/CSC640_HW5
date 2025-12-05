@@ -129,7 +129,7 @@ My project Student Management System integrates **PHP** with **11 RESTful APIs**
 ---
 
 Here is a example of working api which is deployed by NGINX:
-![width:700px center](./api.png)
+![width:700px center](./images/api.png)
 
 ---
 
@@ -227,13 +227,13 @@ Laravel is a modern **PHP web framework** used for building scalable, maintainab
 
 Example of Laravel installed
 
-![width:800px center](./laravel.png)
+![width:800px center](./images/laravel.png)
 
 ---
 
 Example of Laravel page
 
-![width:800px center](./laravel_page.png)
+![width:800px center](./images/laravel_page.png)
 
 ---
 
@@ -332,13 +332,13 @@ Laravel supports multiple databases like MySQL, PostgreSQL, and SQLite.
 
 Example of Database in laravel
 
-![center](./database.png)
+![center](./images/database.png)
 
 ---
 
 Example of Database setup
 
-![width:800px center](./mysql.png)
+![width:800px center](./images/mysql.png)
 
 ---
 
@@ -515,3 +515,469 @@ SOLID is a set of principles to write **maintainable and scalable object-oriente
 
 This report covers key software engineering concepts including OOP design, requirements analysis, fundamental OOP principles (Abstraction, Inheritance, Encapsulation, Polymorphism, Composition), software testing, and SOLID principles. Applying these practices leads to modular, maintainable, and scalable software solutions.
 
+---
+
+# High-Level Languages, JavaScript, and TypeScript: Week-5
+
+---
+
+# What Is a High-Level Programming Language?
+High-level programming languages are designed to be easy for humans to understand and write. Unlike low-level languages that directly interact with hardware, high-level languages provide abstraction so developers think in terms of logic instead of machine operations.
+### **Key Features**
+- Human-readable syntax
+- Portable across systems
+- Automatic memory management
+- Built-in libraries
+- Error-handling mechanisms
+
+---
+
+# What Is JavaScript?
+JavaScript (JS) is a **high-level, dynamic scripting language** used to make web pages interactive. It runs inside all browsers and is essential for web development.
+### **Where JavaScript Is Used**
+- Frontend web development
+- Backend (Node.js)
+- Mobile apps (React Native)
+- Desktop apps (Electron)
+- Game development
+
+---
+
+# **Pros & Cons of JavaScript**
+### ✔ Pros
+- Easy to learn
+- Runs on all browsers
+- Large community
+- Fast development
+### ✘ Cons
+- No type safety
+- Runtime errors
+- Difficult for large projects
+
+---
+
+# **JavaScript Basics: Examples**
+### Print a Message
+```js
+console.log("Hello World!");
+```
+### Add Numbers
+```js
+let x = 5;
+let y = 8;
+console.log(x + y);
+```
+### Modify HTML
+```js
+document.getElementById("title").innerText = "Welcome Home";
+```
+---
+
+# **Build a To-Do App in JavaScript**
+### HTML
+```html
+<input id="taskInput" placeholder="Add a task" />
+<button onclick="addTask()">Add</button>
+<ul id="taskList"></ul>
+```
+### JavaScript
+```js
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const task = input.value.trim();
+  if (!task) return;
+  const li = document.createElement("li");
+  li.textContent = task;
+  document.getElementById("taskList").appendChild(li);
+  input.value = "";
+}
+```
+---
+
+Example of Javascript ToDo
+
+![center](./images/JS.png)
+
+---
+
+# What Is TypeScript?
+TypeScript (TS) is a **superset of JavaScript** created by Microsoft. It introduces **static typing**, making code safer and more maintainable.
+### **Key Characteristics**
+- Uses `.ts` files
+- Compiles to JavaScript
+- Has interfaces, enums, generics
+- Offers excellent IDE support
+
+---
+
+
+# **Pros & Cons of TypeScript**
+### ✔ Pros
+- Type-safe
+- Better for large apps
+- Enhanced developer experience
+- More maintainable
+### ✘ Cons
+- Requires compilation
+- Harder to learn
+- Extra setup needed
+
+---
+
+# **TypeScript Basics: Examples**
+### Typed Function
+```ts
+function multiply(a: number, b: number): number {
+  return a * b;
+}
+```
+### Interface Example
+```ts
+interface Student {
+  name: string;
+  age: number;
+}
+const s1: Student = {
+  name: "Faiza",
+  age: 24
+};
+```
+---
+# **Build a To-Do App in TypeScript**
+### HTML
+```html
+<input id="taskInput" placeholder="Add a task" />
+<button id="addBtn">Add</button>
+<ul id="taskList"></ul>
+```
+---
+
+### TypeScript
+```ts
+const input = document.getElementById("taskInput") as HTMLInputElement;
+const btn = document.getElementById("addBtn") as HTMLButtonElement;
+const list = document.getElementById("taskList") as HTMLUListElement;
+function addTask(): void {
+  const task: string = input.value.trim();
+  if (!task) return;
+  const li = document.createElement("li");
+  li.textContent = task;
+  list.appendChild(li);
+  input.value = "";
+}
+btn.addEventListener("click", addTask);
+```
+
+---
+
+Example of Typescript ToDo
+
+![center](./images/TS.png)
+
+---
+
+# **JavaScript vs TypeScript — Detailed Comparison**
+### Typing System
+- JavaScript → Dynamic typing
+- TypeScript → Static typing
+### Error Handling
+- JavaScript → Errors at runtime
+- TypeScript → Errors during development
+### Learning Curve
+- JavaScript → Easy for beginners
+- TypeScript → Moderate difficulty
+
+---
+
+### Tooling
+- JavaScript → Basic tools
+- TypeScript → Advanced IDE features
+### Compilation
+- JavaScript → No compilation
+- TypeScript → Must compile to JS
+
+---
+
+# **Conclusion**
+- High-level languages simplify coding.
+- JavaScript is ideal for fast and flexible development.
+- TypeScript improves reliability with static types.
+- Both can build apps like To-Do lists.
+
+---
+
+# React: Week-6
+
+## What Is React?
+
+- JavaScript library for building user interfaces
+
+- Developed by Facebook (Meta)
+
+- Based on components
+
+- Uses Virtual DOM for fast rendering
+
+- Enables interactive, dynamic web apps
+
+---
+
+## Why Use React?
+
+### ✅ Advantages
+
+- Component reusability
+
+- Fast UI rendering (Virtual DOM)
+
+- Large community & ecosystem
+
+- Easy integration with APIs
+
+- Suitable for scalable apps
+
+---
+
+### ❌ Disadvantages
+
+- JSX learning curve
+
+- Frequent library updates
+
+- Not a full framework (needs external libraries)
+
+- Initial setup can be complex
+
+---
+
+## Simple React ToDo App Example:
+
+```
+import { useState } from "react";
+
+function App() {
+  const [task, setTask] = useState("");
+  const [list, setList] = useState([]);
+
+  const addTask = () => {
+    if (task.trim() === "") return;
+    setList([...list, task]);
+    setTask("");
+  };
+  ```
+
+  ---
+
+  ```
+  return (
+    <div>
+      <h2>React ToDo App</h2>
+      <input
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Enter task"
+      />
+      <button onClick={addTask}>Add</button>
+
+      <ul>
+        {list.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+---
+
+Example of React ToDo
+
+![center](./images/React.png)
+
+---
+
+## Conclusion
+
+- JavaScript → versatile programming language
+
+- TypeScript → JS + static types, safer for large apps
+
+- React → library for building dynamic web interfaces
+
+- React + JS/TS → modern, interactive, scalable web apps
+
+---
+
+# GitHub, GitHub.io, Docker, and Hugo: Week-7
+
+
+---
+
+## 1. Introduction
+
+This report provides an in-depth overview of four major tools in modern software development: **GitHub**, **GitHub.io**, **Docker**, and **Hugo**. The goal is to explain their functionality, use cases, and how they integrate into a developer’s workflow.
+
+---
+
+## 2. GitHub
+
+**Definition:**  
+GitHub is a cloud-based platform that provides **version control** using the Git system. It allows developers to manage, track, and collaborate on code efficiently.
+
+**Core Features:**
+- **Repositories:** Central storage for project files.
+- **Branches:** Isolate development efforts for features, bug fixes, or experiments.
+- **Pull Requests & Code Reviews:** Facilitate collaborative development and ensure code quality.
+- **Issue Tracking:** Manage tasks, bugs, and feature requests.
+
+---
+
+**Use Cases:**
+- Collaborative software development.
+- Open-source project hosting.
+- Version control for both code and documentation.
+
+**Working Mechanism:**
+Developers can **clone** a repository locally, make changes, and **push** them back. Others can **pull** these changes and merge them into their local copy or main branch.
+
+**Example Diagram:**
+```
+Developer A  ---> GitHub Repo <--- Developer B
+         (push, pull, merge)
+```
+
+---
+
+## 3. GitHub.io
+
+**Definition:**  
+GitHub Pages (GitHub.io) is a free static website hosting service provided by GitHub. It allows developers to deploy websites directly from their repositories.
+
+**Key Features:**
+- Free hosting for public repositories.
+- Customizable with themes and templates.
+- Supports static content including HTML, CSS, and JavaScript.
+
+---
+
+**Common Uses:**
+- Personal portfolio websites.
+- Project documentation.
+- Blogs and static content platforms.
+
+**Workflow:**
+```
+Code on GitHub Repo -> GitHub Pages -> Live Website (username.github.io)
+```
+
+---
+
+## 4. Docker
+
+**Definition:**  
+Docker is a platform for **containerization** that enables developers to package an application with its dependencies into a **container**. Containers are lightweight, portable, and ensure consistent execution across different environments.
+
+**Core Concepts:**
+- **Container:** Encapsulates the application + dependencies.
+- **Image:** Read-only template to create containers.
+- **Docker Engine:** Runs and manages containers.
+
+---
+
+**Benefits:**
+- Environment consistency: runs the same on development, staging, and production.
+- Lightweight and efficient compared to virtual machines.
+- Simplifies deployment, scaling, and testing.
+
+**Diagram:**
+```
+[App + Dependencies] --> Docker Container --> Runs on Any OS
+```
+
+**Use Cases:**
+- Local development environment setup.
+- Testing applications in isolated containers.
+- Microservices architecture deployment.
+
+---
+
+## 5. Hugo
+
+**Definition:**  
+Hugo is a **static site generator** written in Go that transforms Markdown content into fully functional HTML websites.
+
+**Core Features:**
+- **Fast Build Times:** Can generate thousands of pages in seconds.
+- **Theming and Templates:** Supports reusable templates and layouts.
+- **Markdown Support:** Easy content creation without HTML knowledge.
+
+---
+
+**Benefits:**
+- Ideal for blogs, portfolios, and documentation sites.
+- Works seamlessly with GitHub Pages for hosting.
+- Reduces server-side processing since the site is static.
+
+**Workflow:**
+```
+Markdown + Hugo Templates -> Hugo Build -> Static HTML Website -> Deploy (GitHub.io)
+```
+
+---
+
+## 6. Integration: How They Work Together
+
+**Step-by-Step Workflow:**
+1. **Development:** Write content in Markdown and structure it with Hugo templates.
+2. **Version Control:** Store project and content on GitHub.
+3. **Build and Test:** Optionally use Docker to test Hugo site locally.
+4. **Deployment:** Push static HTML files to GitHub repository.
+5. **Hosting:** Enable GitHub Pages to make the site live at `username.github.io`.
+
+**Diagram:**
+```
+[Markdown + Hugo] --build--> [Static HTML] --push--> [GitHub Repo] --deploy--> [GitHub.io]
+                                         \
+                                          \
+                                          [Docker Container for Testing]
+```
+
+---
+
+## 7. Advantages of Using These Tools Together
+
+- **Fast Deployment:** Hugo + GitHub Pages allows almost instant publishing.
+- **Collaboration:** GitHub supports team workflows, pull requests, and reviews.
+- **Portability:** Docker ensures consistent environments for local testing.
+- **Automation:** Integrate CI/CD pipelines for automatic builds and deployments.
+
+---
+
+## 8. Uses in my laravel project 
+
+Example of Github.io Page
+
+![center width:800](./images/Github.png)
+
+---
+
+Example of Hugo Page
+
+![center width:800](./images/Hugo.png)
+
+---
+
+Example of working Docker
+
+![center](./images/Docker.png)
+
+---
+
+## 9. Conclusion
+
+- **GitHub:** Manages code and facilitates collaboration.
+- **GitHub.io:** Provides free static website hosting.
+- **Docker:** Enables consistent, containerized environments.
+- **Hugo:** Generates static websites quickly from Markdown.

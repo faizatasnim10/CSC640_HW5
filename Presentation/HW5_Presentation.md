@@ -534,3 +534,428 @@ OOP combined with proper requirements and testing ensures robust software design
 - **Polymorphism & Composition:** Enable flexible and dynamic behavior.  
 - **SOLID Principles:** Promote maintainable, scalable, and high-quality code.  
 - **Testing:** Validates that design and implementation meet the requirements.
+
+---
+# Week-5
+# High-Level Programming, JavaScript & TypeScript
+
+---
+
+# What Is a High-Level Programming Language?
+- A high-level programming language is easy for humans to read and write.
+- It hides complex machine-level details.
+- Focus on *logic* rather than hardware.
+- Examples: **Python, JavaScript, TypeScript, React**.
+
+---
+
+# JavaScript (JS)
+
+- JavaScript is a high-level, dynamic, interpreted language.
+- Runs in all web browsers.
+- Used to make webpages interactive.
+- Used in frontend & backend (Node.js).
+
+---
+# Pros & Cons: JavaScript
+### ✔ Pros
+- Easy to learn
+- Works in every browser
+- Huge community
+- Fast development
+
+### ✘ Cons
+- No type safety
+- Runtime errors
+- Hard to maintain large projects
+
+---
+
+# JavaScript Examples
+### 1. Print a Message
+```js
+console.log("Hello World!");
+```
+### 2. Add Two Numbers
+```js
+let a = 5;
+let b = 10;
+console.log(a + b); // 15
+```
+### 3. Change HTML Text
+```js
+document.getElementById("title").innerText = "Welcome!";
+```
+
+---
+
+# Build a To-Do App Using JavaScript
+### Basic Structure
+HTML:
+```html
+<input id="taskInput" placeholder="Add new task" />
+<button onclick="addTask()">Add</button>
+<ul id="taskList"></ul>
+```
+---
+
+JavaScript:
+```js
+function addTask() {
+  const input = document.getElementById("taskInput");
+  const task = input.value.trim();
+  if (!task) return;
+
+  const li = document.createElement("li");
+  li.textContent = task;
+
+  document.getElementById("taskList").appendChild(li);
+  input.value = "";
+}
+```
+
+---
+
+# TypeScript (TS)
+
+- TypeScript is JavaScript with types.
+- Created by Microsoft.
+- Compiles to JavaScript.
+- Helps catch errors early with type checking.
+
+---
+
+# Pros & Cons: TypeScript
+### ✔ Pros
+- Type safety
+- Cleaner, scalable code
+- Better IDE support
+- Great for large projects
+
+### ✘ Cons
+- Requires compilation
+- Slightly harder to learn
+- Extra setup needed
+
+---
+
+# TypeScript Examples
+### 1. Add Numbers with Types
+```ts
+function add(a: number, b: number): number {
+  return a + b;
+}
+```
+
+### 2. Define an Interface
+```ts
+interface User {
+  name: string;
+  age: number;
+}
+
+const person: User = {
+  name: "Faiza",
+  age: 25
+};
+```
+
+---
+
+# Build a To-Do App Using TypeScript
+HTML:
+```html
+<input id="taskInput" placeholder="Add new task" />
+<button id="addBtn">Add</button>
+<ul id="taskList"></ul>
+```
+---
+
+TypeScript (compile to JS):
+```ts
+const input = document.getElementById("taskInput") as HTMLInputElement;
+const addBtn = document.getElementById("addBtn") as HTMLButtonElement;
+const list = document.getElementById("taskList") as HTMLUListElement;
+
+function addTask(): void {
+  const task: string = input.value.trim();
+  if (!task) return;
+
+  const li = document.createElement("li");
+  li.textContent = task;
+
+  list.appendChild(li);
+  input.value = "";
+}
+
+addBtn.addEventListener("click", addTask);
+```
+
+---
+
+# JavaScript vs TypeScript
+
+JavaScript → Dynamic typing
+TypeScript → Static typing with defined types
+JavaScript → Errors found at runtime
+TypeScript → Errors caught during development/compilation
+JavaScript → Easier for beginners
+TypeScript → Moderate learning curve due to type system
+JavaScript → Basic tools
+TypeScript → Advanced IDE support and better developer tools
+JavaScript → No compilation required
+TypeScript → Must be compiled into JavaScript before running
+
+
+---
+
+# Conclusion
+- High-level languages make development easier.
+- JavaScript is simple and flexible, great for beginners.
+- TypeScript adds types for safer, scalable code.
+- Both can build powerful apps like To-Do lists.
+
+---
+
+# Week-6
+# React
+
+---
+
+## What Is React?
+
+- React is a JavaScript library for building user interfaces.
+
+- Developed by Facebook (Meta).
+
+- Based on components.
+
+- Uses a virtual DOM to efficiently update UI.
+
+- Allows fast, interactive web apps.
+
+---
+
+## Why React? (Advantages)
+
+### ✅ Pros
+
+- Component reusability
+
+- Fast rendering (Virtual DOM)
+
+- Strong community & ecosystem
+
+- Easy integration with APIs
+
+- Great for scalable apps
+
+---
+
+## React Disadvantages
+
+### ❌ Cons
+
+- JSX learning curve
+
+- Frequent library updates
+
+- Not a full framework (needs external libraries)
+
+- Setup can be complex for beginners
+
+---
+
+## JavaScript vs TypeScript vs React
+Key Differences:
+
+### 1. JavaScript
+
+- A programming language
+
+- Dynamic typing
+
+- Runs in browser directly
+
+### 2. TypeScript
+
+- Superset of JS
+
+- Static typing
+
+- Must compile to JS
+
+---
+
+### 3. React
+
+- A UI library
+
+- Uses JS/TS
+
+- Builds interactive web apps
+
+---
+
+## Simple React ToDo App Example
+
+```react
+import { useState } from "react";
+
+function App() {
+  const [task, setTask] = useState("");
+  const [list, setList] = useState([]);
+
+  const addTask = () => {
+    if (task.trim() === "") return;
+    setList([...list, task]);
+    setTask("");
+  };
+
+```
+---
+
+```
+  return (
+    <div>
+      <h2>React ToDo App</h2>
+      <input
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Enter task"
+      />
+      <button onClick={addTask}>Add</button>
+
+      <ul>
+        {list.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
+```
+---
+
+## Conclusion
+
+- JavaScript = programming language
+
+- TypeScript = JavaScript + types
+
+- React = library for building UI
+
+- React + JS/TS → powerful way to create modern web apps
+
+---
+
+# Week-7
+## 🌐 GitHub, GitHub.io, Docker, and Hugo
+
+
+---
+
+## 💻 What is GitHub?
+
+A cloud-based platform for version control using **Git**
+
+**Purpose:**  
+- Track changes  
+- Collaborate with developers  
+- Manage code repositories
+
+**Key Features:**  
+- Repositories (projects)  
+- Branching & merging  
+- Pull requests & code reviews  
+- Issue tracking
+
+
+---
+
+## 🌐 What is GitHub.io?
+
+**Definition:**  
+GitHub Pages – free hosting for static websites
+
+**URL Format:** `username.github.io`
+
+**Purpose:**  
+- Deploy websites directly from GitHub repositories
+
+**Use Cases:**  
+- Personal portfolio  
+- Project documentation  
+- Blogs
+
+---
+
+## 🐳 What is Docker?
+
+**Definition:**  
+A platform to build, ship, and run applications in **containers**
+
+**Key Concept:**  
+Containers package the app + dependencies → run anywhere
+
+**Benefits:**  
+- Consistency across environments  
+- Lightweight vs virtual machines  
+- Easy scaling & deployment
+
+
+
+---
+
+## ⚡ What is Hugo?
+
+**Definition:**  
+A fast static site generator written in **Go**
+
+**Purpose:**  
+- Converts Markdown content → HTML websites
+
+**Benefits:**  
+- Blazing fast builds  
+- Easy theming & templates  
+- Works well with GitHub Pages
+
+
+
+---
+
+## 🔄 How These Work Together
+
+1. **Development:** Write content in Markdown, build site with Hugo  
+2. **Version Control:** Store code & content on GitHub  
+3. **Hosting:** Deploy generated site on GitHub Pages (GitHub.io)  
+4. **Containerization (Optional):** Docker to test Hugo site locally
+
+  
+```
+[Markdown + Hugo] --build--> [Static HTML] --push--> [GitHub Repo] --deploy--> [GitHub.io]
+                                         \
+                                          \
+                                          [Docker Container for Testing]
+```
+
+---
+
+## ✅ Benefits of Using These Together
+
+- **Fast Deployment:** Hugo + GitHub Pages → instant publishing  
+- **Collaboration:** Multiple contributors on GitHub  
+- **Portability:** Docker ensures consistent environments  
+- **Automation:** CI/CD pipelines can rebuild & deploy automatically
+
+---
+
+## 🏁 Conclusion
+
+- **GitHub:** Code management & collaboration  
+- **GitHub.io:** Free static website hosting  
+- **Docker:** Containerized app environment  
+- **Hugo:** Fast static site generator  
+
